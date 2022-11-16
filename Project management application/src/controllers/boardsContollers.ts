@@ -33,9 +33,9 @@ export const createBoard = async (req: Request, res: Response) => {
     return res.status(400).send(createError(400, "bad request: " + bodyError));
   }
 
-  const { title, owner, users } = req.body;
+  const { title, subscribe, owner, users } = req.body;
   try {
-    const newBoard = await boardService.createBoard({ title, owner, users }, guid, initUser);
+    const newBoard = await boardService.createBoard({ title, subscribe, owner, users }, guid, initUser);
     res.json(newBoard);
   }
   catch (err) { return console.log(err); }

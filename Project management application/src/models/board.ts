@@ -6,6 +6,10 @@ const boardScheme = new Schema({
     type: String,
     required: true,
   },
+  subscribe: {
+    type: String,
+    required: false,
+  },
   owner: {
     type: String,
     required: true,
